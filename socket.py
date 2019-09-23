@@ -36,4 +36,4 @@ def handleMessage2(asd):
 
 
 if __name__ == '__main__':
-	socketio.run(app,host="192.168.100.20",port=7444)
+	socketio.run(app,host="192.168.100.20",port=7444,certfile='cert.pem', keyfile='key.pem')
