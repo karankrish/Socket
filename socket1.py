@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 23 11:20:55 2019
-
-@author: karan
-"""
-
 from flask import Flask
 from flask_socketio import SocketIO, send , emit
 from flask_cors import CORS
@@ -20,7 +12,11 @@ def some_function(p):
     print("===============")
     socketio.emit('testEmit', p)
 
-
+@socketio.on('test')
+def handleMessage(test):
+    print(test)
+    
+    
 @socketio.on('connection')
 def handleMessage(asd):
     print(asd)
@@ -32,8 +28,5 @@ def handleMessage2(asd):
     some_function(asd)
 
     
-        
-
-
 if __name__ == '__main__':
-	socketio.run(app,host="192.168.100.20",port=7444,certfile='cert.pem', keyfile='key.pem')
+	socketio.run(app,host="192.168.100.20",port=7333, certfile='cert.pem', keyfile='key.pem')
