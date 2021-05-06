@@ -1,4 +1,4 @@
 Flask==1.0
-Flask-Cors==3.0.6
+Flask-Cors==3.0.9
 Flask-SocketIO==4.2.1
 eventlet==0.17.4
